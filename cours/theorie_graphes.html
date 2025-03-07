@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matériel de cours - [Nom du Cours]</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div class="course-container">
+        <div class="course-header">
+            <h2 id="courseName">[Nom du Cours]</h2>
+            <p id="professorInfo">Professeur: [Nom du Professeur]</p>
+        </div>
+        
+        <div class="materials-section">
+            <h3 class="section-title">Cours</h3>
+            <ul class="pdf-list" id="courseList">
+                <!-- Dynamiquement rempli par JavaScript -->
+            </ul>
+        </div>
+        
+        <div class="materials-section">
+            <h3 class="section-title">Travaux Dirigés</h3>
+            <ul class="pdf-list" id="tdList">
+                <!-- Dynamiquement rempli par JavaScript -->
+            </ul>
+        </div>
+        
+        <div class="materials-section">
+            <h3 class="section-title">Travaux Pratiques</h3>
+            <ul class="pdf-list" id="tpList">
+                <!-- Dynamiquement rempli par JavaScript -->
+            </ul>
+        </div>
+        
+    </div>
+    
+    <script>
+        // Données simulées des documents PDF 
+        const courseMaterials = {
+            "administration_informatique": {
+                title: "Administration de l'Infrastructure Informatique",
+                professor: "Pr. Tissir",
+                courses: [
+                    { name: "Cours 1 - Introduction", file: "pdfs/admin/cours1.pdf" },
+                    { name: "Cours 2 - Gestion de fichiers et répertoires", file: "pdfs/admin/cours2.pdf" },
+                    { name: "Cours 3 -  Processus de boot", file: "pdfs/admin/cours3.pdf" }
+                ],
+                td: [
+                    { name: "TD 1 - Exercices d'application", file: "pdfs/admin/td1.pdf" },
+                ],
+                tp: [
+                    { name: "TP 1 - Installation ", file: "pdfs/admin/tp1.pdf" },
+                    { name: "TP 2 - Commandes", file: "pdfs/admin/tp2.pdf" }
+                ]
+            },
+            "java": {
+                title: "Java",
+                professor: "Pr. Baghdadi",
+                courses: [
+                    { name: "Cours 1 - Introduction à Java", file: "pdfs/java/cours1.pdf" },
+                ],
+                tp: [
+                    { name: "TP 1 - Premier programme", file: "pdfs/java/tp1.pdf" },
+                    { name: "TP 2 - Classes et objets", file: "pdfs/java/tp2.pdf" },
+                    { name: "TP 3 - Polymorphisme", file: "pdfs/java/tp2.pdf" }
+
+                ]
+            },
+            "systemes_exploitation": {
+                title: "Systèmes d'exploitation & UNIX",
+                professor: "Pr. Omari",
+                courses: [
+                    { name: "Cours 1 - Introduction aux OS", file: "pdfs/os/cours1.pdf" },
+                    { name: "Cours 2 - UNIX", file: "pdfs/os/cours2.pdf" }
+                ],
+                td: [
+                    { name: "TD 1 - Commandes de base", file: "pdfs/os/td1.pdf" }
+                ],
+                tp: [
+                    { name: "TP 1 - Shell scripting", file: "pdfs/os/tp1.pdf" }
+                ]
+            },
+            "programmation_web": {
+                title: "Programmation Web",
+                professor: "Pr. Omari",
+                courses: [
+                    { name: "Cours 1 - HTML", file: "pdfs/web/cours1.pdf" },
+                    { name: "Cours 2 - CSS ", file: "pdfs/web/cours2.pdf" }
+                ]
+            },
+            "anglais": {
+                title: "anglais",
+                professor: "Pr. Boukhlet",
+                courses: [
+                    { name: "Cours 1 - learn English", file: "pdfs/ang/cours1.pdf" }                ]
+                
+            },
+            "art_digital": {
+                title: "art_digital",
+                professor: "Pr. Ghazdali",
+               
+            },
+            "francais": {
+                title: "français",
+                professor: "Pr. Hamza",
+               
+            },
+            "theorie_graphes": {
+                title: "théorie des graphes et optimisation combinatoire",
+                professor: "Pr. Dargham",
+               
+            },
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer le nom du cours depuis l'URL
+            const path = window.location.pathname;
+            const courseId = path.split('/').pop().replace('.html', '');
+            
+            if (courseMaterials[courseId]) {
+                const courseData = courseMaterials[courseId];
+                
+                // Mettre à jour les informations du cours
+                document.getElementById('courseName').textContent = courseData.title;
+                document.getElementById('professorInfo').textContent = 'Professeur: ' + courseData.professor;
+                document.title = 'Matériel de cours - ' + courseData.title;
+                
+                // Remplir les listes de documents
+                fillPdfList('courseList', courseData.courses);
+                fillPdfList('tdList', courseData.td);
+                fillPdfList('tpList', courseData.tp);
+            }
+        });
+        
+        function fillPdfList(listId, items) {
+            const list = document.getElementById(listId);
+            
+            if (items && items.length > 0) {
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'pdf-item';
+                    
+                    li.innerHTML = `
+                        <span class="pdf-icon">📄</span>
+                        <a href="${item.file}" class="pdf-link" target="_blank">${item.name}</a>
+                    `;
+                    
+                    list.appendChild(li);
+                });
+            } else {
+                list.innerHTML = '<li class="pdf-item">Aucun document disponible pour le moment</li>';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header-table, .info-table, .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+}
+
+.header-text {
+    text-align: center;
+    font-size: 14px;
+}
+
+.filiere-text {
+    text-align: left;
+    font-size: 14px;
+}
+
+.title-cell {
+    text-align: center;
+}
+
+.title-text {
+    text-decoration: underline;
+}
+
+.schedule-table td {
+    border: 2px solid rgb(19, 109, 194);
+    text-align: center;
+    padding: 8px;
+    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+}
+
+.time-slot {
+    color: #E26B0A;
+    font-weight: bold;
+    font-family: Times;
+    background-color: #EEE;
+}
+
+.day-cell {
+    color: #E26B0A;
+    font-family: Times;
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+.course-cell {
+    color: #E26B0A;
+    background-color: #eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.professor-cell {
+    color: #205867;
+    background-color: #eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+.tp-cell {
+    color: #ff0000;
+    background-color: white;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.vertical-text {
+    font-family: Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    position: relative;
+    left: 14px;
+}
+
+.vertical-text2 {
+    font-family: Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    position: relative;
+    left: 37px;
+}
+
+.highlight-area {
+    width: 70px; /* Set width */
+    height: 15px; /* Set height */
+    background-color: yellow; /* Background color */
+    display: inline-block; /* Prevent it from taking full width */
+}
+
+.vertical-text3 {
+    font-family: Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform: matrix(0, -1, 1, 0, 0, 0);
+    position: relative;
+    left: 268px;
+    top: 112px;
+}
+
+/* Nouveaux styles ajoutés pour les liens des professeurs et cours */
+.professor-link {
+    color: #205867;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 2px 5px;
+    transition: all 0.3s ease;
+}
+
+.professor-link:hover {
+    background-color: yellow;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.course-link {
+    color: #E26B0A;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.course-link:hover {
+    text-decoration: underline;
+    color: #ff6600;
+    cursor: pointer;
+}
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 3px solid rgb(19, 109, 194);
+    border-radius: 10px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(19, 109, 194);
+}
+
+.professor-info {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #eeffe8;
+    border-left: 4px solid #E26B0A;
+}
+
+.professor-details h3 {
+    color: #205867;
+    margin-bottom: 10px;
+}
+
+.professor-details p {
+    margin: 5px 0;
+    color: #444;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #E26B0A;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: rgb(19, 109, 194);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(19, 109, 194);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

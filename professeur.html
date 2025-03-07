@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de demande d'information - Professeur</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Demande d'Information - <span id="professorName">Professeur</span></h2>
+        </div>
+        
+        <div class="professor-info">
+            <div class="professor-details" id="professorDetails">
+                <!-- Les détails du professeur seront chargés ici dynamiquement -->
+            </div>
+        </div>
+        
+        <form id="professorForm">
+            <div class="form-group">
+                <label for="studentName">Nom et Prénom:</label>
+                <input type="text" id="studentName" name="studentName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentEmail">Email:</label>
+                <input type="email" id="studentEmail" name="studentEmail" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentClass">Filière et Niveau:</label>
+                <input type="text" id="studentClass" name="studentClass" value="GI1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="requestType">Type de demande:</label>
+                <select id="requestType" name="requestType">
+                    <option value="cours">Demande de cours</option>
+                    <option value="exercice">Demande d'exercices</option>
+                    <option value="rdv">Demande de rendez-vous</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
+        </form>
+        
+        <a href="emploi.html" class="back-link">Retour à l'emploi du temps</a>
+    </div>
+    
+    <script>
+        // Base de données des professeurs
+        const professorsData = {
+            "Tissir": {
+                fullName: "Pr. Tissir",
+                department: "Département d'Informatique",
+                courses: ["Administration de l'Infrastructure Informatique"],
+                email: "professeur.tissir@example.com",
+                officeHours: "Lundi et Mardi, 14h-16h"
+            },
+            "Baghdadi": {
+                fullName: "Pr. Baghdadi Sara",
+                department: "Département d'Informatique",
+                courses: ["Java", "Programmation Orientée Objet"],
+                email: "professeur.baghdadi@example.com",
+                officeHours: "Mercredi, 14h-18h"
+            },
+            "Omari": {
+                fullName: "Pr. Omari ",
+                department: "Département d'Informatique",
+                courses: ["Systèmes d'Exploitation & UNIX", "Programmation Web"],
+                email: "Kml.omari1@gmail.com",
+                officeHours: "Jeudi et Vendredi, 9h-11h"
+            },
+            "Boukhlet": {
+                fullName: "Pr. Boukhlet",
+                department: "Département des Langues",
+                courses: ["Anglais Technique"],
+                email: "professeur.boukhlet@example.com",
+                officeHours: "Jeudi, 14h-16h"
+            }
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Récupérer le nom du professeur depuis l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const professorName = urlParams.get('name');
+            
+            if (professorName && professorsData[professorName]) {
+                const professor = professorsData[professorName];
+                
+                // Mettre à jour le titre
+                document.getElementById('professorName').textContent = professor.fullName;
+                document.title = 'Formulaire de demande d\'information - ' + professor.fullName;
+                
+                // Afficher les détails du professeur
+                const detailsDiv = document.getElementById('professorDetails');
+                detailsDiv.innerHTML = `
+                    <h3>${professor.fullName}</h3>
+                    <p><strong>Département:</strong> ${professor.department}</p>
+                    <p><strong>Matières enseignées:</strong> ${professor.courses.join(', ')}</p>
+                    <p><strong>Email:</strong> ${professor.email}</p>
+                    <p><strong>Heures de bureau:</strong> ${professor.officeHours}</p>
+                `;
+            } else {
+                // Si le professeur n'est pas trouvé
+                document.getElementById('professorName').textContent = "Professeur non trouvé";
+                document.getElementById('professorDetails').innerHTML = "<p>Les informations pour ce professeur ne sont pas disponibles.</p>";
+            }
+            
+            // Gestion de la soumission du formulaire
+            document.getElementById('professorForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Votre demande a été envoyée avec succès!');
+                // Ici vous pourriez ajouter du code pour envoyer réellement les données
+            });
+        });
+    </script>
+</body>
+</html>

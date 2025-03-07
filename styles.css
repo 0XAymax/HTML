@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.header-table, .info-table, .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+}
+
+.header-text {
+    text-align: center;
+    font-size: 14px;
+}
+
+.filiere-text {
+    text-align: left;
+    font-size: 14px;
+}
+
+.title-cell {
+    text-align: center;
+}
+
+.title-text {
+    text-decoration: underline;
+}
+
+.schedule-table td {
+    border: 2px solid rgb(19, 109, 194);
+    text-align: center;
+    padding: 8px;
+    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+
+}
+
+.time-slot {
+    color: #E26B0A;
+    font-weight: bold;
+    font-family:Times;
+    background-color: #EEE;
+}
+
+.day-cell {
+    color: #E26B0A;
+    font-family:Times;
+    font-weight: bold;
+    background-color: #EEE;
+}
+
+.course-cell {
+    color: #E26B0A;
+    background-color:#eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size:11px
+}
+
+.professor-cell {
+    color: #205867;
+    background-color: #eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size:9px
+}
+
+.tp-cell {
+    color: #ff0000;
+    background-color: white;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size:11px
+}
+
+.vertical-text {
+    font-family:Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform:matrix(0,-1,1,0,0,0);
+    position: relative;
+    left: 14px;
+}
+
+.vertical-text2 {
+    font-family:Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform:matrix(0,-1,1,0,0,0);
+    position: relative;
+    left: 37px;
+}
+
+.highlight-area {
+    width: 70px;  /* Set width */
+    height: 15px;  /* Set height */
+    background-color: yellow; /* Background color */
+    display: inline-block; /* Prevent it from taking full width */
+}
+
+.vertical-text3 {
+    font-family:Times;
+    font-weight: bold;
+    font-size: 10px;
+    color: #c00000;
+    transform:matrix(0,-1,1,0,0,0);
+    position: relative;
+    left: 268px;
+    top:112px;
+}
+
