@@ -7,7 +7,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+    border:3px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
 }
 
 .header-text {
@@ -32,7 +32,7 @@ body {
     border: 2px solid rgb(19, 109, 194);
     text-align: center;
     padding: 8px;
-    border: 5px solid rgb(19, 109, 194); /* Bordure extérieure épaisse */
+    border: 3px solid rgb(19, 109, 194); 
 
 }
 
@@ -57,6 +57,13 @@ body {
     font-weight: bold;
     font-size:11px
 }
+.course-cell a{
+    color: #E26B0A;
+    background-color:#eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size:11px
+}
 
 .professor-cell {
     color: #205867;
@@ -65,7 +72,13 @@ body {
     font-weight: bold;
     font-size:9px
 }
-
+.professor-cell a{
+    color: #205867;
+    background-color: #eeffe8;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size:9px
+}
 .tp-cell {
     color: #ff0000;
     background-color: white;
